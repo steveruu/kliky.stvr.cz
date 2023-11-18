@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kliky.stvr.cz</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- aha!!!!! -->
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="header__item">kliky.stvr.cz</h1>
+        </div>
+
+        <h1 class="number" id="number">0</h1>
+        <div class="body">
+            <button class="body__incrementing-button" id="button">+</button>
+            <input type="number" class="body__incrementer" aria-label="incrementer" id="amount" placeholder="amount">
+        </div>
+
+
+        <script>
+            let button = document.getElementById('button');
+            let number = document.getElementById('number');
+            let incrementby;
+            let kliky = 0;
+
+            document.getElementById('amount').value = null;
+            button.onclick = () => {
+                incrementby = Number(document.getElementById('amount').value);
+
+                if (incrementby === 0) {
+                    incrementby = 10;
+                    kliky += incrementby;
+                } else {
+                    kliky += incrementby;
+                }
+
+                number.innerText = kliky;
+            }
+        </script>
+    </div>
+</body>
+</html>
