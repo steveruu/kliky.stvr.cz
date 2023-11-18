@@ -12,12 +12,11 @@
             <h1 class="header__item">kliky.stvr.cz</h1>
         </div>
 
-        <h1 class="number" id="number">0</h1>
         <div class="body">
+            <h1 class="number" id="number">0</h1>
             <button class="body__incrementing-button" id="button">+</button>
-            <input type="number" class="body__incrementer" aria-label="incrementer" id="amount" placeholder="amount">
+            <input type="number" class="body__input" aria-label="incrementer" id="amount" placeholder="amount" min="1">
         </div>
-
 
         <script>
             let button = document.getElementById('button');
@@ -37,6 +36,11 @@
                 }
 
                 number.innerText = kliky;
+                if (Number(number.innerText) % 100 === 0) {
+                    number.style.color = "#6b42ff";
+                } else {
+                    number.style.color = "white";
+                }
             }
         </script>
     </div>
